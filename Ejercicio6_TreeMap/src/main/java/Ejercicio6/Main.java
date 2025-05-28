@@ -13,6 +13,8 @@ public class Main {
 
     public static void mostrarTreeMap() {
         TreeMap<String, Integer> jugadores = new TreeMap<>();
+        String mejorJugador = null;
+        int mayorPuntaje = 0;
 
         jugadores.put("Van Dijk", 89);
         jugadores.put("Cristiano Ronaldo", 86);
@@ -20,18 +22,18 @@ public class Main {
         jugadores.put("Messi", 88);
         jugadores.put("Raphinha", 84);
 
-        System.out.println("Jugadores en orden alfabético: " + jugadores);
+        System.out.println("\nJugadores en orden alfabético: ");
+        for (Map.Entry<String, Integer> entrada : jugadores.entrySet()) {
+            System.out.println("Jugador: " + entrada.getKey() + " - puntaje: " + entrada.getValue());
+        }
 
-        String mejorJugador = "";
-        int mayorPuntaje = Integer.MIN_VALUE;
-
-        for (Map.Entry<String, Integer> entry : jugadores.entrySet()) {
-            if (entry.getValue() > mayorPuntaje) {
-                mayorPuntaje = entry.getValue();
-                mejorJugador = entry.getKey();
+        for (Map.Entry<String, Integer> entrada : jugadores.entrySet()) {
+            if (entrada.getValue() > mayorPuntaje) {
+                mayorPuntaje = entrada.getValue();
+                mejorJugador = entrada.getKey();
             }
         }
 
-        System.out.println("Jugador con mayor puntaje: " + mejorJugador + " (" + mayorPuntaje + ")");
+        System.out.println("\nJugador con mayor puntaje: " + mejorJugador + " (" + mayorPuntaje + ")");
     }
 }
