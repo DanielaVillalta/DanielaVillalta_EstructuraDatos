@@ -37,6 +37,10 @@ public class Main {
         canciones.addFirst("Halley's Comet - Billie Eilish");
         System.out.println(canciones.get(0));
 
+        System.out.println("\nEliminar la última canción:");
+        System.out.println("Eliminando " + canciones.getLast() + "...");
+        canciones.removeLast();
+
         System.out.println("\nLista de canciones:");
         for(String elemento : canciones) {
             System.out.println(elemento);
